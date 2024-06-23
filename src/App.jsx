@@ -1,35 +1,193 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+// src/App.jsx
+import React from "react";
 import "./App.css";
+import { ProductCard } from "./components/product-card";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const products = [
+    {
+      cardImg: "./src/images/1984.png",
+      title: "1984",
+      janr: "SIYOSAT, FANTASTIKA",
+      starImg: "./src/images/svg/star.svg",
+      headphone: "./src/images/svg/headphone-line.svg",
+      book: "./src/images/svg/booksvg.svg",
+    },
+    {
+      cardImg: "./src/images/RichDad.png",
+      title: "Rich dad poor dad",
+      janr: "SIYOSAT, FANTASTIKA",
+      starImg: "./src/images/svg/star.svg",
+      headphone: "./src/images/svg/headphone-line.svg",
+      book: "./src/images/svg/booksvg.svg",
+    },
+    {
+      cardImg: "./src/images/kod8.png",
+      title: "Код 8",
+      janr: "SIYOSAT, FANTASTIKA",
+      starImg: "./src/images/svg/star.svg",
+      headphone: "./src/images/svg/headphone-line.svg",
+      book: "./src/images/svg/booksvg.svg",
+    },
+    {
+      cardImg: "./src/images/kiz.png",
+      title: "Даниел КИЗ",
+      janr: "SIYOSAT, FANTASTIKA",
+      starImg: "./src/images/svg/star.svg",
+      headphone: "./src/images/svg/headphone-line.svg",
+      book: "./src/images/svg/booksvg.svg",
+    },
+    {
+      cardImg: "./src/images/beparvolik.png",
+      title: "Бепарволикнинг но...",
+      janr: "SIYOSAT, FANTASTIKA",
+      starImg: "./src/images/svg/star.svg",
+      headphone: "./src/images/svg/headphone-line.svg",
+      book: "./src/images/svg/booksvg.svg",
+    },
+  ];
+
+  const audioproducts = [
+    {
+      cardImg: "./src/images/ego.png",
+      title: "1984",
+      janr: "SIYOSAT, FANTASTIKA",
+      starImg: "./src/images/svg/star.svg",
+      headphone: "./src/images/svg/headphone-line.svg",
+      book: "./src/images/svg/booksvg.svg",
+    },
+    {
+      cardImg: "./src/images/rokit.png",
+      title: "Rich dad poor dad",
+      janr: "SIYOSAT, FANTASTIKA",
+      starImg: "./src/images/svg/star.svg",
+      headphone: "./src/images/svg/headphone-line.svg",
+      book: "./src/images/svg/booksvg.svg",
+    },
+    {
+      cardImg: "./src/images/beparvolik.png",
+      title: "Бепарволикнинг но...",
+      janr: "SIYOSAT, FANTASTIKA",
+      starImg: "./src/images/svg/star.svg",
+      headphone: "./src/images/svg/headphone-line.svg",
+      book: "./src/images/svg/booksvg.svg",
+    },
+    {
+      cardImg: "./src/images/stellite.png",
+      title: "Код 8",
+      janr: "SIYOSAT, FANTASTIKA",
+      starImg: "./src/images/svg/star.svg",
+      headphone: "./src/images/svg/headphone-line.svg",
+      book: "./src/images/svg/booksvg.svg",
+    },
+    {
+      cardImg: "./src/images/cite.png",
+      title: "Даниел КИЗ",
+      janr: "SIYOSAT, FANTASTIKA",
+      starImg: "./src/images/svg/star.svg",
+      headphone: "./src/images/svg/headphone-line.svg",
+      book: "./src/images/svg/booksvg.svg",
+    },
+  ];
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="product-section">
+      <h1 className="section-title">Янги қўшилганлар</h1>
+      <div className="product-cards">
+        {products.map((product, index) => (
+          <ProductCard
+            key={index}
+            cardImg={product.cardImg}
+            title={product.title}
+            janr={product.janr}
+            starImg={product.starImg}
+            headphone={product.headphone}
+            book={product.book}
+          />
+        ))}
       </div>
-      <h1>React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <h1 className="section-title">Аудио китоблар</h1>
+      <div className="product-cards">
+        {audioproducts.map((product, index) => (
+          <ProductCard
+            key={index}
+            cardImg={product.cardImg}
+            title={product.title}
+            janr={product.janr}
+            starImg={product.starImg}
+            headphone={product.headphone}
+            book={product.book}
+          />
+        ))}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   );
 }
 
 export default App;
+
+// import React from "react";
+// import "./App.css";
+// import { ProductCard } from "./components/product-card";
+
+// function App() {
+//   const products = [
+//     {
+//       cardImg: "./src/images/1984.png",
+//       title: "1984",
+//       janr: "SIYOSAT, FANTASTIKA",
+//       starImg: "../src/images/svg/star.svg",
+//       headphone: "./src/images/svg/headphone-line.svg",
+//       book: "./src/images/svg/booksvg.svg",
+//     },
+//     {
+//       cardImg: "./src/images/1984.png",
+//       title: "1984",
+//       janr: "SIYOSAT, FANTASTIKA",
+//       starImg: "./src/images/svg/star.svg",
+//       headphone: "./src/images/svg/headphone-line.svg",
+//       book: "./src/images/svg/booksvg.svg",
+//     },
+//     {
+//       cardImg: "./src/images/1984.png",
+//       title: "1984",
+//       janr: "SIYOSAT, FANTASTIKA",
+//       starImg: "./src/images/svg/star.svg",
+//       headphone: "./src/images/svg/headphone-line.svg",
+//       book: "./src/images/svg/booksvg.svg",
+//     },
+//     {
+//       cardImg: "./src/images/1984.png",
+//       title: "1984",
+//       janr: "SIYOSAT, FANTASTIKA",
+//       starImg: "./src/images/svg/star.svg",
+//       headphone: "./src/images/svg/headphone-line.svg",
+//       book: "./src/images/svg/booksvg.svg",
+//     },
+//     {
+//       cardImg: "./src/images/1984.png",
+//       title: "1984",
+//       janr: "SIYOSAT, FANTASTIKA",
+//       starImg: "./src/images/svg/star.svg",
+//       headphone: "./src/images/svg/headphone-line.svg",
+//       book: "./src/images/svg/booksvg.svg",
+//     },
+//   ];
+//   return (
+//     <div className="product-cars">
+//       {products.map((product, index) => (
+//         <ProductCard
+//           key={index}
+//           cardImg={products.cardImg}
+//           title={products.title}
+//           janr={products.janr}
+//           starImg={products.starImg}
+//           headphone={products.headphone}
+//           book={products.book}
+//         />
+//       ))}
+//     </div>
+//   );
+// }
+
+// export default App;
